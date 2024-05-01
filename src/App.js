@@ -8,12 +8,12 @@ import './App.css';
 class App extends Component {
   state = {
     tasks: [
-      { id: 1, name: 'Task 1', description: 'Description for Task 1', dueDate: '2024-05-10', status: 'pending', assignedTo: null },
-      { id: 2, name: 'Task 2', description: 'Description for Task 2', dueDate: '2024-05-15', status: 'pending', assignedTo: null },
-      { id: 3, name: 'Task 3', description: 'Description for Task 3', dueDate: '2024-05-10', status: 'pending', assignedTo: null },
-      { id: 4, name: 'Task 4', description: 'Description for Task 4', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
-      { id: 5, name: 'Task 5', description: 'Description for Task 5', dueDate: '2024-05-10', status: 'completed', assignedTo: null },
-      { id: 6, name: 'Task 6', description: 'Description for Task 6', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
+      { id: 1, name: 'Learn HTML', description: 'Build both Static Web Site', dueDate: '2024-05-10', status: 'pending', assignedTo: null },
+      { id: 2, name: 'Learn CSS', description: 'Learn media queries ', dueDate: '2024-05-15', status: 'pending', assignedTo: null },
+      { id: 3, name: 'Learn Java', description: 'Learn java programing', dueDate: '2024-05-10', status: 'pending', assignedTo: null },
+      { id: 4, name: 'Learn JavaScript', description: 'Build best UI', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
+      { id: 5, name: 'Learn Python', description: 'Learn Pandas', dueDate: '2024-05-10', status: 'completed', assignedTo: null },
+      { id: 6, name: 'Learn React.Js', description: 'Build Todo Clone', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
       
     ],
     users: [

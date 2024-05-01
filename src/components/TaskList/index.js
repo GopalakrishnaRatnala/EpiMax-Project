@@ -30,7 +30,7 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection, selectedTask, us
             <strong>{task.name}</strong>
             <p>{task.description}</p>
             <p>Due Date: {task.dueDate}</p>
-            <p>Assigned ID: {task.id}</p>
+            <p>Assigned ID: {task.assignedTo === null? "Un Assigned": task.assignedTo }</p>
             <div>
               <input
                 type="checkbox"
@@ -40,8 +40,6 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection, selectedTask, us
               <p>{task.status === 'completed' ? 'Completed' : 'Pending'}</p>
               
             </div>
-
-            
           </li>
           ))}
         </ul>

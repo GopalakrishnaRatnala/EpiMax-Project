@@ -5,8 +5,13 @@
   }
   
   .assignment-container select {
-    padding: 8px;
     width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border: 5px;
   }
   
   .assignment-container button {
