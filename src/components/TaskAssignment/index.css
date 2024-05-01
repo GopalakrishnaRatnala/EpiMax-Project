@@ -1,0 +1,24 @@
+/* TaskAssignment.css */
+
+.assignment-container {
+    margin-bottom: 20px;
+  }
+  
+  .assignment-container select {
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .assignment-container button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .assignment-container button:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,97 @@
+/* TaskList.css */
+
+.task-list {
+  margin-bottom: 20px;
+}
+
+.task-list ul {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; 
+  overflow-x: auto;
+  width: 30vw;
+}
+
+.task-list li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #e6f6ff;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #096f92;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.task-list li:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-list li div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-list li label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
+}
+
+.task-list li label p {
+  font-size: 16px;
+  color: #333;
+}
+.task-assigned {
+  background-color: #f0f0f0; /* Light gray background */
+}
+.all-tasks-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.pending-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 5px;
+  max-width: 40vw;
+}
+
+.completed-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #333;
+  border-radius: 5px;
+  max-width: 40vw;
+  align-items: center;
+}
+.task-container-heading{
+  border: 1px solid #ccc;
+  border-color: #096f92;
+  background-color: #e6f6ff;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  border-radius: 5px;
+  padding: 5px 0px;
+  border-width: 3px;
+  
+}
