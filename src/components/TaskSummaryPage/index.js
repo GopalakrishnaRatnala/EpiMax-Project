@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import './index.css'; 
 
