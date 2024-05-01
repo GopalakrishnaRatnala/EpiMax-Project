@@ -4,15 +4,13 @@ import "./index.css"
 
 class TaskAssignment extends Component {
   state = {
-    selectedType: 'user', // Default selected type
+    selectedType: 'user', 
     selectedUser: '',
     selectedTeam: ''
   };
 
   handleAssignTask = () => {
     const { selectedType, selectedUser, selectedTeam } = this.state;
-    console.log(selectedTeam, selectedUser)
-    console.log(true && 1)
     const { onAssignTask } = this.props;
     if (selectedType === 'user' && selectedUser) {
       onAssignTask(selectedUser);

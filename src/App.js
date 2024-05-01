@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList';
 import TaskAssignment from './components/TaskAssignment';
-import './App.css'; // Import CSS file
+import TaskSummaryPage from './components/TaskSummaryPage';
+import './App.css'; 
 
 class App extends Component {
   state = {
@@ -13,19 +14,19 @@ class App extends Component {
       { id: 4, name: 'Task 4', description: 'Description for Task 4', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
       { id: 5, name: 'Task 5', description: 'Description for Task 5', dueDate: '2024-05-10', status: 'completed', assignedTo: null },
       { id: 6, name: 'Task 6', description: 'Description for Task 6', dueDate: '2024-05-15', status: 'completed', assignedTo: null },
-      // Add more tasks as needed
+      
     ],
     users: [
       { id: 1, name: 'User 1' },
       { id: 2, name: 'User 2' },
-      // Add more users as needed
+      
     ],
     teams: [
       { id: 1, name: 'Team 1' },
       { id: 2, name: 'Team 2' },
-      // Add more teams as needed
+      
     ],
-    selectedTask: null // Track selected task for assignment
+    selectedTask: null 
   };
 
   handleAddTask = (newTask) => {
@@ -49,7 +50,7 @@ class App extends Component {
         }
         return task;
       }),
-      selectedTask: null // Reset selected task after assignment
+      selectedTask: null 
     }));
   };
 
@@ -72,14 +73,15 @@ class App extends Component {
     const { tasks, users, teams, selectedTask } = this.state;
     console.log(tasks)
     return (
-      <div className="container"> {/* Apply container class */}
-        <div className="header"> {/* Apply header class */}
+      <div className="container"> 
+        <div className="header">
           <h1>Task Manager</h1>
           <p>Manage your tasks efficiently</p>
         </div>
         <AddTaskForm onAddTask={this.handleAddTask} />
-        <TaskList tasks={tasks} onTaskStatusUpdate={this.handleTaskStatusUpdate} onTaskSelection={this.handleTaskSelection} />
+        <TaskList tasks={tasks} onTaskStatusUpdate={this.handleTaskStatusUpdate} onTaskSelection={this.handleTaskSelection} selectedTask={selectedTask} users={users} teams={teams}/>
         <TaskAssignment users={users} teams={teams} onAssignTask={this.handleAssignTask} selectedTask={selectedTask} />
+        <TaskSummaryPage tasks={tasks} />
       </div>
     );
   }

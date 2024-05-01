@@ -1,9 +1,12 @@
 
-import React from 'react';
+import {useState} from 'react';
 
 import "./index.css"
 
-const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
+const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection, selectedTask, users, teams,}) => {
+
+  const [selectedItemId, setSelectedItemId] = useState(null);
+  
   const handleStatusToggle = (taskId, status) => {
     const newStatus = status === 'pending' ? 'completed' : 'pending';
     onTaskStatusUpdate(taskId, newStatus);
@@ -11,7 +14,9 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
 
   const handleTaskClick = (taskId) => {
     onTaskSelection(taskId);
+    setSelectedItemId(taskId);
   };
+
 
   return (
     <div className='task-list'>
@@ -21,11 +26,11 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
         <h2 className='task-container-heading'>Pending Tasks</h2>
         <ul>
           {tasks.map((task) => (
-            task.status === "pending" && <li key={task.id} className={task.assignedTo ? 'task-assigned' : ''} >
+            task.status === "pending" && <li key={task.id}  className={`${task.id === selectedItemId ? 'highlighted' : ''}`} onClick={() => handleTaskClick(task.id)}>
             <strong>{task.name}</strong>
             <p>{task.description}</p>
             <p>Due Date: {task.dueDate}</p>
-            <p>{task.assignedTo}</p>
+            <p>Assigned ID: {task.id}</p>
             <div>
               <input
                 type="checkbox"
@@ -36,7 +41,7 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
               
             </div>
 
-            <button type='button' onClick={() => handleTaskClick(task.id)}>Assign To</button>
+            
           </li>
           ))}
         </ul>
@@ -45,11 +50,11 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
         <h2 className='task-container-heading'>Completed Tasks</h2>
         <ul>
           {tasks.map((task) => (
-            task.status === "completed" && <li key={task.id} className={task.assignedTo ? 'task-assigned' : ''} >
+            task.status === "completed" && <li key={task.id}  className={`${task.id === selectedItemId ? 'highlighted' : ''}`} onClick={() => handleTaskClick(task.id)}>
             <strong>{task.name}</strong>
             <p>{task.description}</p>
             <p>Due Date: {task.dueDate}</p>
-            <p>{task.assignedTo}</p>
+            <p>Assigned ID: {task.id}</p>
             <div>
               <input
                 type="checkbox"
@@ -59,8 +64,6 @@ const TaskList = ({ tasks, onTaskStatusUpdate, onTaskSelection }) => {
               <p>{task.status === 'completed' ? 'Completed' : 'Pending'}</p>
               
             </div>
-
-            <button type='button' onClick={() => handleTaskClick(task.id)}>Assign To</button>
           </li>
           ))}
         </ul>
